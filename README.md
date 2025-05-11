@@ -15,5 +15,5 @@ A lightweight Chrome extension to compare **JSON**, **CSV**, and **XML** files s
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/chrome-file-comparator.git
+   git clone https://github.com/Shindevaibhav16/chrome-file-comparator.git
    cd chrome-file-comparator

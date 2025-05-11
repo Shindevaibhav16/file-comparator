@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Comparator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Compare Files</h2>
+  <input type="file" id="file1" />
+  <input type="file" id="file2" />
+  <select id="fileType">
+    <option value="json">JSON</option>
+    <option value="xml">XML</option>
+    <option value="csv">CSV</option>
+  </select>
+  <button id="compareBtn">Compare</button>
+  <pre id="result"></pre>
+  <button id="downloadBtn" style="display:none;">Download Diff</button>
+
+  <script src="libs/papaparse.min.js"></script>
+  <script src="libs/jsondiffpatch.umd.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "File Comparator",
+  "version": "1.0",
+  "description": "Compare JSON, XML, or CSV files",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Compare Files"
+  },
+  "permissions": ["storage"],
+  "host_permissions": []
+}

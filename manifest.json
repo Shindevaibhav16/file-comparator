@@ -2,11 +2,19 @@
   "manifest_version": 3,
   "name": "File Comparator",
   "version": "1.0",
-  "description": "Compare JSON, XML, or CSV files",
+  "description": "Compare two CSV, JSON, or XML files and output their differences.",
+  "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Compare Files"
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
   },
-  "permissions": ["storage"],
-  "host_permissions": []
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
 }

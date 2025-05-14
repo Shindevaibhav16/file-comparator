@@ -2,23 +2,97 @@
 <html>
 <head>
   <title>File Comparator</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      width: 340px;
+      background-color: #f9f9f9;
+    }
+    input, select, button {
+      width: 100%;
+      margin-top: 8px;
+      font-size: 14px;
+      padding: 6px;
+    }
+    h3 {
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 8px;
+    }
+
+    .diff-output {
+      margin-top: 10px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      border: 1px solid #ccc;
+      padding: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+      background: white;
+    }
+
+    .added {
+      background-color: #e6ffed;
+      color: green;
+    }
+    .removed {
+      background-color: #ffeef0;
+      color: red;
+    }
+    .unchanged {
+      color: #999;
+    }
+
+    /* Spinner styles */
+    .spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #ccc;
+      border-top-color: #333;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .status-message {
+      font-style: italic;
+      color: #555;
+      margin-top: 10px;
+    }
+  </style> 
 </head>
 <body>
-  <h2>Compare Files</h2>
+  <h3>Compare Files</h3>
+  <label for="file1">Select First File:</label>
   <input type="file" id="file1" />
+
+  <label for="file2">Select Second File:</label>
   <input type="file" id="file2" />
+
+  <label for="fileType">File Type:</label>
   <select id="fileType">
+    <option value="csv">CSV</option>
     <option value="json">JSON</option>
     <option value="xml">XML</option>
-    <option value="csv">CSV</option>
   </select>
-  <button id="compareBtn">Compare</button>
-  <pre id="result"></pre>
-  <button id="downloadBtn" style="display:none;">Download Diff</button>
 
-  <script src="libs/papaparse.min.js"></script>
-  <script src="libs/jsondiffpatch.umd.js"></script>
-  <script src="popup.js"></script>
+  <label><input type="checkbox" id="gitStyle" /> Git-style diff</label>
+
+  <button id="compareBtn">Compare</button>
+  <button id="downloadBtn">Download Result as .txt</button>
+
+  <div id="output" class="diff-output"></div>
+
+  <script type="module" src="popup.js"></script>
 </body>
 </html>
